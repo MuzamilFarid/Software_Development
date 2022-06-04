@@ -10,8 +10,6 @@ struct node {
 
 };
 
-
-
 int main()
 {
      struct node *ptr;
@@ -29,9 +27,6 @@ int main()
      ptr = (struct node*)malloc(sizeof(struct node));
      ptr -> n_addr <= NULL;
      
-   
-  
-     
       if(pointer==NULL)
       {
         pointer = tmp;
@@ -46,15 +41,7 @@ int main()
          }
 
          ctr->n_addr = ptr;
-
-
-
-
-
       }
-  
-
-        
 
 
      // scanf_s ("%d", &x);
