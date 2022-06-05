@@ -1,7 +1,9 @@
 // Program to add a node in the beginning & end of the of single linked list
+// Program to find the size of linked list.
 
 #include <stdio.h>
 #include <stdlib.h>
+
 
 struct node {
 
@@ -10,79 +12,75 @@ struct node {
 
 };
 
+
+struct node *head;
+void addnodebeginning();
+void length_ls(struct node *root);
 int main()
 {
-     struct node *ptr;
-     struct node *pointer;
-     struct node *tmp;
-     struct node *ctr;
-     
+ 
+ // calling addnode function
+ int i=0;
+ while(i<5) {
+ addnodebeginning();
+ i++;   
+ }
+length_ls(head);
+
+}
+
+
+// Function to add the nodes at the end of the list or successive nodes
+
+ void addnodebeginning()
+ {
+
+    struct node *tmp;
+    struct node *p;
      tmp = (struct node*)malloc(sizeof(struct node));
-     printf("Enter the data of the node\n");
+     printf("Enter the data of the nodes\n");
      scanf("%d",&tmp->data);
        // assigning the next address field of node
       tmp -> n_addr = NULL;
-     printf("Enter the data of the last element of list\n");
-     scanf("%d",&ptr->data);
-     ptr = (struct node*)malloc(sizeof(struct node));
-     ptr -> n_addr <= NULL;
-     
-      if(pointer==NULL)
+    if(head==NULL)
       {
-        pointer = tmp;
+        head = tmp;
       }
-      else
-      {
-        ctr = pointer;
-        while(ctr->n_addr != NULL)
+       else
+       {
+           
+        p = head;
+        while(p->n_addr != NULL)
          {
-            ctr = ctr->n_addr;
+            p = p->n_addr;
 
          }
 
-         ctr->n_addr = ptr;
+         p->n_addr = tmp;
+
       }
-
-
-     // scanf_s ("%d", &x);
-      //fflush(stdin);
-    //   printf("Please enter the value of x \n");
-    //   fflush(stdin);
-    //   scanf("%d", &x);
-    //   fflush(stdin);
-    //  printf("The value of x is %d", x);
-    //  fflush(stdout);
-     // pointer = (struct node*)malloc(sizeof(struct node));
-    //  //struct node *sec_ptr;
-    //  printf("Please enter the value of the data of the struct\n");
-    //  fflush(stdout);
-    //  scanf("%d",p->data);
-    //  printf("The value entered now is %d",(*p).data);
-//printf("The value contained insdie the poointer variable is %x",*pointer);
-
-    //pointer -> data = 50;
-
-
-
-
-
-    //printf("The value of data is %d\n", (*pointer).data);
-
-
-
-//printf("Hello This is Muzamil, Starting with Linked List/DS \n");
-//printf("Hello This is Muzamil, Starting with Linked List, Second Push/DS \n");
-
  
 
 
-// printf("The size of the struct defined above is %d bytes \n", sizeof(struct node));
-// printf("The size of the integer is %d bytes \n", sizeof(pointer));
-// printf("The size of the pointer is %d bytes \n", sizeof(sec_ptr));
 
 
 
+ }
+
+ // Function to count the length of the list
+   void length_ls (struct node *root)
+    {
+
+      int count = 0;
+      struct node *temp;
+      temp = head;
+      while(temp!= NULL)
+      {
+        count++;
+        temp = temp -> n_addr;
+      }
+    
+ printf("The lenght of the list is %d\n", count);
 
 
-
-}
+    }
