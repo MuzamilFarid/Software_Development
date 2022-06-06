@@ -15,8 +15,9 @@ struct node {
 
 struct node *head;
 void addnodebeginning();
-void length_ls(struct node *root);
+int length_ls();
 int display();
+void delete();
 int main()
 {
 
@@ -29,11 +30,10 @@ int main()
  i++;   
  }
 
-length_ls(head);
-
-
- 
+int len= length_ls();
  display();
+ printf("Calling a delete function .........\n");
+ delete();
 
 }
 
@@ -76,7 +76,7 @@ length_ls(head);
  }
 
  // Function to count the length of the list
-   void length_ls (struct node *root)
+   int length_ls ()
     {
 
       int count = 0;
@@ -89,6 +89,7 @@ length_ls(head);
       }
     
  printf("The lenght of the list is %d\n", count);
+    return count;
 
 
     }
@@ -105,5 +106,50 @@ length_ls(head);
            temp = temp->n_addr;
        
         }
+
+    }
+
+    void delete()
+    {
+      
+       struct node *temp;
+       temp = head;
+       int l,j;
+       printf("Enter the node you want to delete\n");
+       scanf("%d",&l);
+
+       if(temp=NULL)
+       {
+           printf("The list is empty\n");
+       }
+       else if(l==1)
+       { 
+          printf("First node deleted\n");
+          head = temp->n_addr;
+          temp->n_addr = NULL;
+          free(temp);
+     
+       }
+
+      else
+      {
+     struct node *pt = head;
+     struct node *q;
+         while(j<l-1)
+      {
+            pt = pt -> n_addr;
+             j++;
+ 
+      }
+        q = pt -> n_addr;
+        pt -> n_addr = q -> n_addr;
+        q -> n_addr = NULL;
+
+        free(q);
+
+
+      }
+
+
 
     }
