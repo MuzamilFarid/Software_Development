@@ -1,5 +1,6 @@
 // Program to add a node in the beginning & end of the of single linked list
 // Program to find the size of linked list.
+// Added deletion fucntion to delete a node in single linked list
 
 #include <stdio.h>
 #include <stdlib.h>
