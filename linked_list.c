@@ -69,11 +69,6 @@ int len= length_ls();
 
       }
  
-
-
-
-
-
  }
 
  // Function to count the length of the list
@@ -91,7 +86,6 @@ int len= length_ls();
     
  printf("The lenght of the list is %d\n", count);
     return count;
-
 
     }
 
@@ -129,7 +123,6 @@ int len= length_ls();
           head = temp->n_addr;
           temp->n_addr = NULL;
           free(temp);
-     
        }
 
       else
@@ -148,9 +141,6 @@ int len= length_ls();
 
         free(q);
 
-
       }
-
-
 
     }
