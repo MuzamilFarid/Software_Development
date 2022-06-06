@@ -16,16 +16,24 @@ struct node {
 struct node *head;
 void addnodebeginning();
 void length_ls(struct node *root);
+int display();
 int main()
 {
- 
+
  // calling addnode function
  int i=0;
+ int j=0;
+
  while(i<5) {
  addnodebeginning();
  i++;   
  }
+
 length_ls(head);
+
+
+ 
+ display();
 
 }
 
@@ -82,5 +90,20 @@ length_ls(head);
     
  printf("The lenght of the list is %d\n", count);
 
+
+    }
+
+   // Program to display elements of the liked list.
+    int  display()
+    {
+        struct node *temp;
+        temp = head;
+       
+        while(temp!=NULL)
+        {
+           printf("The elements of the list are %d\n",temp -> data);
+           temp = temp->n_addr;
+       
+        }
 
     }
