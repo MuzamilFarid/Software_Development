@@ -19,6 +19,7 @@ void addnodebeginning();
 int length_ls();
 int display();
 void delete();
+void insert();
 int main()
 {
 
@@ -35,6 +36,9 @@ int len= length_ls();
  display();
  printf("Calling a delete function .........\n");
  delete();
+ fflush(stdout);
+ printf("Calling an insert function .........\n");
+ insert();
 
 }
 
@@ -109,7 +113,7 @@ int len= length_ls();
       
        struct node *temp;
        temp = head;
-       int l,j;
+       int l,j=0;
        printf("Enter the node you want to delete\n");
        scanf("%d",&l);
 
@@ -138,9 +142,42 @@ int len= length_ls();
         q = pt -> n_addr;
         pt -> n_addr = q -> n_addr;
         q -> n_addr = NULL;
+       
 
         free(q);
-
+    
       }
+
+    }
+
+    void insert()
+    {
+          struct node *tmp,*p;
+          tmp = head;
+          int l;
+          printf("Enter the location of the node you want to insert\n");
+          scanf("%d",&l);
+          if(l > length_ls())
+          {
+              printf("Node doest exist\n");
+
+          }
+          else
+          {
+            int i=1;
+             if(i < l)
+          {
+              tmp = tmp -> n_addr;
+              i++;
+          }
+
+            p = (struct node*)malloc(sizeof(struct node*));
+            p -> data = 15;
+            p -> n_addr = tmp -> n_addr;
+            tmp -> n_addr = p;
+            free(p);
+
+          }
+
 
     }
