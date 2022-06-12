@@ -17,7 +17,7 @@ struct node {
 struct node *head;
 void addnodebeginning();
 int length_ls();
-int display();
+void display();
 void delete();
 void insert();
 int main()
@@ -94,7 +94,7 @@ int len= length_ls();
     }
 
    // Program to display elements of the liked list.
-    int  display()
+    void  display()
     {
         struct node *temp;
         temp = head;
@@ -103,7 +103,6 @@ int len= length_ls();
         {
            printf("The elements of the list are %d\n",temp -> data);
            temp = temp->n_addr;
-       
         }
 
     }
