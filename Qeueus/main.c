@@ -7,31 +7,28 @@
 
 #define capacity 5 
 
-// Driver Code/Program Entry
-
 
 // program to insert an element in the fifo
-void insert_element(int fifo[],int *f,int *b)
+void insert_element(int fifo[],int *front, int *back)
 {
 
     int elem;
     printf("Enter the elements in the FIFO\n");
     scanf("%d",&elem);
-    fifo[*b]=elem;
-     printf("The location of the b is %d\n",*b);
-    *b = *b +1;
+    fifo[*back]=elem;
+     printf("The location of the b is %d\n",*back);
+    *back = *back +1;
 }
 
 
 // Check weather the FIFO is full or empty
-void check_fifo(int fifo[], int *f, int*b)
+void check_fifo(int fifo[], int *front, int *back)
 {
 
-       if(*f==*b)
-       {
+       if(*front== *back )    {
          printf("The fifo is empty\n");
        }
-      else if(*b=capacity)
+      else if(*back=capacity)
       {
        printf("The fifo is full\n");
       }    
@@ -41,17 +38,38 @@ void check_fifo(int fifo[], int *f, int*b)
        }
 }
 
-void display_fifo(int fifo[], int *f, int *b){
+void display_fifo(int fifo[], int *front, int *back){
 
 
-for(int i=0; i<5; i++){
+for(int i=0; i<*back; i++){
 printf("The elements of the FIFO are fifo[%d]=%d\n",i, fifo[i]);
 }
-printf("The value of the back pointer is %d\n",*b);
+printf("The value of the back pointer is %d\n",*back);
 
 }
 
-//Driver Code
+void delete_elem(int fifo[], int *front, int *back)
+{
+
+   if(*front==*back)
+   {
+      printf("The fifo is empty\n");
+
+   }
+  else 
+   {
+        printf("deleting element from the FIFO\n");
+      for(int i=0; i<*back-1; i++)
+      {   
+            fifo[i]=fifo[i+1];
+      }
+    *back=*back-1;
+
+   }
+
+}
+
+// Driver Code/Program Entry
 
 int main()
 {
@@ -67,8 +85,13 @@ insert_element(fifo,&front,&back);
 a++;
 }
 check_fifo(fifo,&front,&back);
+
 display_fifo(fifo,&front,&back);
 
+printf("executign a delete function\n");
+delete_elem(fifo,&front,&back);
+
+display_fifo(fifo,&front,&back);
 
 
 }
