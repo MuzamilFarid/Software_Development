@@ -17,8 +17,6 @@ void selectionsort(int *a, int min, int max)
          swap(a,i,small_index);
       
    }
- 
- 
 
 }
 
@@ -37,9 +35,6 @@ int smallest(int *a,int min,int max)
 
        }
  }
-
- printf("The smallest_i value after the loop is %d\n",smallest_i);
- 
      return smallest_i;
 
 
@@ -51,12 +46,9 @@ void swap(int *a, int first ,int second)
   temp = a[first];
   a[first]=a[second];
   a[second]=temp;
-  printf("The first element after swapping is %d\n",a[first]);
-  printf("The second element after swapping is %d\n",a[second]);
+ 
 
 }
-
-
 
 int main()
 {
