@@ -16,7 +16,6 @@ int LinearSearch(int *a, int key, int min, int max)
     }
 
 
-
 }
 
 int main()
