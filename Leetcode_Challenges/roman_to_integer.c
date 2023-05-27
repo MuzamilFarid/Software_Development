@@ -2,9 +2,6 @@
 #include <stdlib.h>
 
 
-// function returning integers of the individual roman numerals
-
-
 // function to equate roman numerals to integers
 int romantoInt(char *c)
 {
@@ -83,19 +80,7 @@ int romantoInt(char *c)
     return result;
     free(num_array);
 
-
-
 }
-
-
-
-
-
-
-
-
-
-
 
 int main()
 {
@@ -106,10 +91,5 @@ char c[20] = "LVIII";
 int num = romantoInt(c);
 
 printf("The answer is %d\n", num);
-
-
-
-
-
 
 }
