@@ -2,18 +2,20 @@
 #include <string.h>
 #include <stdlib.h>
 
- char res[10];
+
+ 
 
 // function returning charcater pointer, a string (in C strings are character arrays, character pointer is actually a string)
 char * longestCommonPrefix(char ** strs, int strsSize){
 
   char ch;
   char comma[10] = "\"\"";
-
-  
+  char *res;
+ 
 
 // Calculate the size of the smallest string in the array
 size_t len_first_string = strlen(strs[0]);
+ res = (char*) malloc(len_first_string * sizeof(char));
 
 for(int i=1; i<strsSize; i++)
 {
@@ -52,7 +54,7 @@ for(int i=1; i<strsSize; i++)
 int main()
 {
 
-char *array[3] = {"kill","bill","like"};
+char *array[3] = {"popopo","oopi","kol"};
  // creating a pointer to character which will recieve a return array
  char *result;
  
